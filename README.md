@@ -35,7 +35,7 @@ Browsers don't do JavaScript very well when opening a HTML file from the the fil
 
 * Visit https://github.com/cortesi/devd/releases and download devd for your OS
 * Unzip it somewhere in your PATH
-* Open a terminal, and type "devd ."
+* Open a terminal in the project root directory, and type `devd .`. Visit http://localhost/src and http://localhost.tests, respectively.
 
 Additionally, please install Git if you don't have it yet:
 
