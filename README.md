@@ -48,4 +48,4 @@ https://code.visualstudio.com/Download
 
 JavaScript resources
 --------------------
-<devdocs.io> - This is really the ultimate reference, and the default selections contain precisely the tech you can use for this assignment. It'll let you search both the JavaScript language and the browser builtins at once.
+devdocs.io - This is really the ultimate reference, and the default documentation set selections contain precisely the tech you can use for this assignment. It'll let you search both the JavaScript language and the browser builtins at once. 
