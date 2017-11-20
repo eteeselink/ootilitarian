@@ -4,8 +4,20 @@
     <script type="module">
         import {Admin} from "./admin.js";
         import {Question} from "./question.js";
-        const poll = new Admin(document.getElementById("hello"));
-        poll.render("George");
+        import {Voter} from "./voter.js";
+        // const poll = new Admin(document.getElementById("hello"));
+        // poll.render("George");
+
+        var questions = [];
+        var q1 = new Question("q1","a1");
+        var q2 = new Question("q2","a2");
+        questions.push(q1);
+        questions.push(q2);
+
+
+        const voter = new Voter(document.getElementById("hello"));
+        voter.displayQuestions(questions);
+
     </script>
 </head>
 <body>

@@ -9,15 +9,12 @@
         this.element = element;
     }
 
-   displayQuestions(name,questions){
-
-        questions.forEach(question => {
-            this.element.innerHTML += `
-            Hi ${name}! ${question.question} <br> 
-            ${question.answer} <br> `;
-        });
+    displayQuestions(questions){
+        
+       this.element.innerHTML =` ${questions[0].question}`;
     }
     
+   
     
 }
 
