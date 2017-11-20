@@ -36,10 +36,16 @@ export class Admin {
             ev.preventDefault();
             // Admin here
             var question = this.element.querySelector("input[name=question]").value;
-
+            if (isBlank(question)){
+                alert("Please input your question");
+                return false;
+            }
             this.element.innerHTML = `<p>Question ${question} is submitted, question type: Yes/No </p>`;
           
         })
+        function isBlank(str) {
+            return (!str || /^\s*$/.test(str));
+        }
 
         // Voter from here
         // var answer = this.element.querySelector("input[name=answer]:checked").value;
