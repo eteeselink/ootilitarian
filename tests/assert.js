@@ -7,9 +7,10 @@ export function report() {
         document.body.style.color = "#fff";
     }
     else {
-        document.body.style.backgroundColor = "#8f8";
+        document.body.style.backgroundColor = "#d60270";
+        document.body.style.color = "#00f";
     }
-    document.body.innerHTML = `${assertionsRun} assertions run, ${assertionsFailed} failed.`;
+    document.body.innerHTML = `<b><div align="center">TU/e</div></b>`;
     if(assertionsFailed) {
         document.body.innerHTML += "<br><small>Check the developer tools console for more info (hit F12)</small>"
     }
