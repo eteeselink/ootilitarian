@@ -3,9 +3,14 @@ export class Voter {
     /**
      * @param {HTMLElement} questions
      */
-    constructor(questions,num) {
-        this.questions = questions;
-    }
-
    
+
+    displayQuestions(name,questions){
+        questions.forEach(question => {
+            this.element.innerHTML = `
+            Hi ${name}! ${question} <br> `;
+        });
+    }
+    
+    
 }
