@@ -13,10 +13,14 @@ import { Result } from "./results.js";
     }
 
     evaluateResults () {
+        var question = [];
+        var result = new Result();
+        
         for (var i = 0; i < questions.length; i++){
             question.answer = this.element.querySelector("input[name=answer${i}]").value;
-            var result = new Result();
+            
             result.pushResult(question);
+            result.retrieveResults(this.element);
         }
     }
     
