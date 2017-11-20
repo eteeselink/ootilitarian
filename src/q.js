@@ -6,12 +6,13 @@ export class Q {
     displayQuestions(question) {
 
         this.element.innerHTML = `
+
                 <label for="question">Question: </label><br>
-                <input type="text" name="question" id="question" value="${question.question}">
+                <input type="text" name="question${index}" id="question" value="${question.question}">
                 <br>
             
                 <label for="answer">Answer: </label><br>
-                <input type="text" name="answer">
+                <input type="text" name="answer${index}">
             
             `;
     }
