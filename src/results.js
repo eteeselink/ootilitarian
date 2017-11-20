@@ -7,7 +7,7 @@ export class Result {
   }
 
   pushResult(question) {
-    this.questions.push(question);
+      this.questions.push(question);
   }
 
   retrieveResults(element) {
@@ -18,7 +18,7 @@ export class Result {
 
       text += this.questions[0].question;
       text += '\n';
-      text += this.questions[0].question.answer;
+      text += this.questions[0].answer;
 
       // for(let i = 0; i < questionarie.length(); i++) {
       //     var question = questionaire.at(i);
