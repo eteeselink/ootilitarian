@@ -27,10 +27,12 @@ export class Result {
     console.log(results);
 
     for (var question in results) {
-        element.innerHTML += `<pre>Question: ${question}</pre>`;
+        element.innerHTML += `<p><b>Question:</b> ${question}</p>`;
+        element.innerHTML += `<p>`;
         for (var answer in results[question]) {
-            element.innerHTML += `${answer}:${results[question][answer]}<br/>`;
+            element.innerHTML += `${answer}: ${results[question][answer]}<br/>`;
         }
+        element.innerHTML += `</p>`;        
     }
   }
 }
