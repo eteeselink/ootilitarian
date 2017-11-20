@@ -1,6 +1,8 @@
 
 //import Question from "./question.js";
 import {Q} from "./q.js";
+import { Question } from "./question.js";
+import { Result } from "./results.js";
 
  export class Voter {
     /**
@@ -17,7 +19,23 @@ import {Q} from "./q.js";
             var qn = new Q(this.element);
             qn.displayQuestions(questions[i]);
 
-        }        
+        }     
+        
+        this.element.innerHTML += `<button id="btn">Submit!</button>`;
+
+
+        this.element.querySelector("button").addEventListener("click", ev => {
+           
+            ev.preventDefault();
+            // Admin here
+           var question = questions[0];
+           
+            question.answer = this.element.querySelector("input[name=answer]").value;
+            var result = new Result();
+            result.pushResult(question);
+          
+           
+        })
     }   
    
     
