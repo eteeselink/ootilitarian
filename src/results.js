@@ -12,7 +12,7 @@ export class Result {
 
   pushResults(questions) {
       for(var question in questions) {
-          pushResult(question);
+          this.pushResult(question);
       }
   }
 
