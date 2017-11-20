@@ -10,6 +10,12 @@ export class Result {
       this.questions.push(question);
   }
 
+  pushResults(questions) {
+      for(var question in questions) {
+          this.pushResult(question);
+      }
+  }
+
   retrieveResults(element) {
     var results = {};
     for(let qa of this.questions) {
@@ -26,6 +32,7 @@ export class Result {
     }
     console.log(results);
 
+    element.innerHTML = "";
     for (var question in results) {
         element.innerHTML += `<p><b>Question:</b> ${question}</p>`;
         element.innerHTML += `<p>`;

@@ -1,5 +1,3 @@
-// import {Poll} from "../src/poll.js";
-// import {assert, report} from "./assert.js";
 import {Admin} from "../src/admin.js";
 import {assert, report} from "./assert.js";
 
