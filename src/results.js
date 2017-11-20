@@ -1,13 +1,31 @@
 // Define one results js function which retrieves data from a container and
 // renders it as HTML.
+export class Result {
 
-export function retrieveResults(element, question, answer) {
+  constructor() {
+      this.questions = new Array();
+  }
 
-    var text = '';
+  pushResult(question) {
+      this.questions.push(question);
+  }
 
-    text += question;
-    text += '\n';
-    text += answer;
+  retrieveResults(element) {
+  //export function retrieveResults(element, questionaire, answer) {
 
-    element.innerHTML = `<pre>${text}</pre>`;
+
+      var text = '';
+
+      text += this.questions[0].question;
+      text += '\n';
+      text += this.questions[0].answer;
+
+      // for(let i = 0; i < questionarie.length(); i++) {
+      //     var question = questionaire.at(i);
+      //     //element.innerHTML = `<pre>${text}</pre>`;
+      // }
+
+      element.innerHTML = `<pre>${text}</pre>`;
+  }
+
 }
