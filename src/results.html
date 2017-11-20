@@ -5,11 +5,18 @@
         import {Result} from "./results.js";
         import {Question} from "./question.js";
         var result = new Result();
-        result.pushResult(new Question("Q1", "Yes"));
+        result.pushResult(new Question("Q1", "Cat"));
+        result.pushResult(new Question("Q1", "Dog"));
+        result.pushResult(new Question("Q1", "Donkey"));
+        result.pushResult(new Question("Q1", "Cat"));
+        result.pushResult(new Question("Q1", "Cat"));
+        result.pushResult(new Question("Q1", "Dog"));
         result.pushResult(new Question("Q2", "Yes"));
-        result.pushResult(new Question("Q3", "No"));
-        result.pushResult(new Question("Q4", "No"));
-        result.pushResult(new Question("Q5", "Yes"));
+        result.pushResult(new Question("Q2", "Yes"));
+        result.pushResult(new Question("Q2", "No"));
+        result.pushResult(new Question("Q2", "Yes"));
+        result.pushResult(new Question("Q2", "No"));
+        result.pushResult(new Question("Q2", "Yes"));
         result.retrieveResults(document.getElementById("hello"));
     </script>
 </head>
