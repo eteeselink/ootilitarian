@@ -37,7 +37,7 @@ export class Result {
         element.innerHTML += `<p><b>Question:</b> ${question}</p>`;
         element.innerHTML += `<p>`;
         for (var answer in results[question]) {
-            element.innerHTML += `${answer}: ${results[question][answer]}<br/>`;
+            element.innerHTML += `${answer}: ${results[question][answer]} vote(s)<br/>`;
         }
         element.innerHTML += `</p>`;        
     }
