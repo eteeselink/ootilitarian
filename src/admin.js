@@ -36,7 +36,8 @@ export class Admin {
             ev.preventDefault();
             // Admin here
             var question = this.element.querySelector("input[name=question]").value;
-            this.element.innerHTML = `<p>Question ${aQuestion.question} is submitted, question type: Yes/No </p>`;
+
+            this.element.innerHTML = `<p>Question ${question} is submitted, question type: Yes/No </p>`;
           
         })
 
