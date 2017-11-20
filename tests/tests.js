@@ -7,6 +7,7 @@ function test1() {
     poll.render("George");
     assert(() => el.innerHTML.includes("Lahmacun"));
     assert(() => el.innerHTML.includes("Pepperoni")); // this one will fail
+    //assert(function(){return el.innerHTML})
 }
 
 // now we run all tests sequentially

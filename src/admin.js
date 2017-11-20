@@ -1,3 +1,6 @@
+import {Question} from "./question.js";
+
+
 export class Admin {
     /**
      * @param {HTMLElement} element 
@@ -24,10 +27,12 @@ export class Admin {
             // since we have no server, we don't want that :-)
             ev.preventDefault();
 
-            const bestPizza = this.element.querySelector("input[name=pizza]:checked").value;
-            this.element.innerHTML = `<p>Indeed ${name}, Pizza ${bestPizza} is by far the best.</p><div id="pizza"></div>`;
+            var question =  this.element.querySelector("input[name=question]").value;
+            var answer = this.element.querySelector("input[name=answer]").value;
+            const aQuestion = new Question(question, answer);
+            this.element.innerHTML = `<p>Question ${aQuestion.question}, Answer ${aQuestion.answer}</p>`;
             
-            makeAsciiArt(this.element.querySelector("#pizza"));
+            //makeAsciiArt(this.element.querySelector("#pizza"));
         })
     }
 }
