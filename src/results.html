@@ -6,14 +6,17 @@
         import {Question} from "./question.js";
         var result = new Result();
         result.pushResult(new Question("Q1", "Yes"));
-        result.pushResult(new Question("Q2", "yES"));
-        result.pushResult(new Question("Q3", "no"));
-        result.pushResult(new Question("Q4", "NO"));
-        result.pushResult(new Question("Q5", "nO"));
+        result.pushResult(new Question("Q2", "Yes"));
+        result.pushResult(new Question("Q3", "No"));
+        result.pushResult(new Question("Q4", "No"));
+        result.pushResult(new Question("Q5", "Yes"));
         result.retrieveResults(document.getElementById("hello"));
     </script>
 </head>
 <body>
+    <h3>The results are: </h3>
     <div id="hello"></div>
+    <br />
+    <h5>Thanks for using our polling system :-)</h5>
 </body>
 </html>

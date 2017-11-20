@@ -11,13 +11,17 @@ export class Result {
   }
 
   retrieveResults(element) {
-      var count = 0;
+      var answers = {};
       for (var i = 0; i < this.questions.length; ++i) {
-          if (this.questions[i].answer.toLowerCase() == 'yes') {
-              count++;
+          if (!(this.questions[i].answer in answers)) {
+              answers[this.questions[i].answer] = 1;
+          } else {
+              answers[this.questions[i].answer]++;
           }
       }
 
-      element.innerHTML = `<pre>Yes: ${count}<br/>No: ${this.questions.length - count}</pre>`
+      for (var answer in answers) {
+          element.innerHTML += `<pre>${answer}:${answers[answer]}</pre>`;
+      }
   }
 }
