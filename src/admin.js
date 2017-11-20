@@ -15,16 +15,7 @@ export class Admin {
             <label for="question">Question: </label><br>
             <input type="text" name="question" id="question">
             <br>
-            <div id="answer" style="display: none;">
-            <label for="answer">Answer: </label><br>
-            <input type="radio" name="answer" value="yes" id="yes">
-            <label for="yes">Yes</label><br>
-
-            <input type="radio" name="answer" value="no" id="no">
-            <label for="no">No</label><br>
-            <br>
-            </div>
-            
+                       
             <button id="btn">Submit!</button>
         `;
 
@@ -41,7 +32,26 @@ export class Admin {
                 return false;
             }
             this.element.innerHTML = `<p>Question ${question} is submitted, question type: Yes/No </p>`;
-          
+            
+            // voter
+            this.element.innerHTML =`<label for="question">Question: </label><br>
+            <input type="text" name="question" id="question">
+            <br>
+            <div id="answer" >
+            <label for="answer">Answer: </label><br>
+            <input type="radio" name="answer" value="yes" id="yes">
+            <label for="yes">Yes</label><br>
+
+            <input type="radio" name="answer" value="no" id="no">
+            <label for="no">No</label><br>
+            <br>
+            </div>
+         
+
+            <button id="btn">Submit!</button>`;
+            this.element.querySelector("input[name=question]").value = question;
+            // send to result
+            
         })
         function isBlank(str) {
             return (!str || /^\s*$/.test(str));
