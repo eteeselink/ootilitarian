@@ -4,11 +4,13 @@
     <script type="module">
         import {Result} from "./results.js";
         import {Question} from "./question.js";
-        var question = new Question("how are you", "shit");
         var result = new Result();
-        result.pushResult(question);
+        result.pushResult(new Question("Q1", "Yes"));
+        result.pushResult(new Question("Q2", "yES"));
+        result.pushResult(new Question("Q3", "no"));
+        result.pushResult(new Question("Q4", "NO"));
+        result.pushResult(new Question("Q5", "nO"));
         result.retrieveResults(document.getElementById("hello"));
-        //retrieveResults(document.getElementById("hello"), 'are you there god?', 'yes');
     </script>
 </head>
 <body>
