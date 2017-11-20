@@ -2,8 +2,15 @@
 <head>
     <title>Ooticracy Results View</title>
     <script type="module">
-        import {retrieveResults} from "./results.js";
-        retrieveResults(document.getElementById("hello"), 'are you there god?', 'yes');
+        import {Result} from "./results.js";
+        import {Question} from "./question.js";
+        var result = new Result();
+        result.pushResult(new Question("Q1", "Yes"));
+        result.pushResult(new Question("Q2", "yES"));
+        result.pushResult(new Question("Q3", "no"));
+        result.pushResult(new Question("Q4", "NO"));
+        result.pushResult(new Question("Q5", "nO"));
+        result.retrieveResults(document.getElementById("hello"));
     </script>
 </head>
 <body>
