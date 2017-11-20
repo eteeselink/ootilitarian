@@ -1,5 +1,5 @@
 import { Question } from "./question.js";
-import {Voter} from "./voter.js";
+import { Voter } from "./voter.js";
 
 export class Admin {
     /**
@@ -14,27 +14,28 @@ export class Admin {
             <p>Welcome Admin, please fill in your (yes/no) question.</p>
             <label for="question">Question: </label><br>
             <input type="text" name="question" id="question">
-            <label for="type">Question type: </label>
-            <select>
+            <label for="type">Answer type: </label>
+            
+            <select id="answerType">
             <option value="text">Text</option>
             <option value="multi">Multiple choices</option>
             <option value="score">Score</option>
           
           </select>
-
+            <button id="add">Add</button>
             <br>
             <button id="btn">Submit!</button>
         `;
 
-        this.element.querySelector("button").addEventListener("click", ev => {
+        this.element.querySelector("button#btn").addEventListener("click", ev => {
             // always add `preventDefault` in an event handler. otherwise, the browser
             // will do some default action which usually means submitting the data to the server, 
             // which causes the entire page to reload.
             // since we have no server, we don't want that :-)
             ev.preventDefault();
-            // Admin here
+
             var question = this.element.querySelector("input[name=question]").value;
-            if (isBlank(question)){
+            if (isBlank(question)) {
                 alert("Please input your question");
                 return false;
             }
@@ -45,13 +46,23 @@ export class Admin {
             const voter = new Voter(document.getElementById("hello"));
             voter.displayQuestions(questions);
         })
+
+        this.element.querySelector("button#add").addEventListener("click", ev => {
+            // always add `preventDefault` in an event handler. otherwise, the browser
+            // will do some default action which usually means submitting the data to the server, 
+            // which causes the entire page to reload.
+            // since we have no server, we don't want that :-)
+            ev.preventDefault();
+
+            var answerType = this.element.querySelector("#answerType").value;
+           
+        })
+
         function isBlank(str) {
             return (!str || /^\s*$/.test(str));
         }
 
-        // Voter from here
-        // var answer = this.element.querySelector("input[name=answer]:checked").value;
-        // const aQuestion = new Question(question, answer);
-        
+
+
     }
 }
