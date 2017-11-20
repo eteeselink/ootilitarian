@@ -11,17 +11,28 @@ export class Result {
   }
 
   retrieveResults(element) {
-      var answers = {};
-      for (var i = 0; i < this.questions.length; ++i) {
-          if (!(this.questions[i].answer in answers)) {
-              answers[this.questions[i].answer] = 1;
-          } else {
-              answers[this.questions[i].answer]++;
-          }
-      }
+    var results = {};
+    for(let qa of this.questions) {
+        const question = qa.question;
+        if (!(question in results)) {
+            results[question] = {};
+        } 
+        const answer = qa.answer;
+        if (!(answer in results[question])) {
+            results[question][answer] = 1;
+        } else {
+            results[question][answer]++;
+        }
+    }
+    console.log(results);
 
-      for (var answer in answers) {
-          element.innerHTML += `<pre>${answer}:${answers[answer]}</pre>`;
-      }
+    for (var question in results) {
+        element.innerHTML += `<p><b>Question:</b> ${question}</p>`;
+        element.innerHTML += `<p>`;
+        for (var answer in results[question]) {
+            element.innerHTML += `${answer}: ${results[question][answer]}<br/>`;
+        }
+        element.innerHTML += `</p>`;        
+    }
   }
 }
