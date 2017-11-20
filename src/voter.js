@@ -12,6 +12,14 @@ import { Result } from "./results.js";
         this.element = element;
     }
 
+    evaluateResults () {
+        for (var i = 0; i < questions.length; i++){
+            question.answer = this.element.querySelector("input[name=answer${i}]").value;
+            var result = new Result();
+            result.pushResult(question);
+        }
+    }
+    
     displayQuestions(questions){
         for (var i = 0; i < questions.length; i++) { 
             // this.element.innerHTML += `<br/>${questions[i].question} <br/>
@@ -28,15 +36,15 @@ import { Result } from "./results.js";
            
             ev.preventDefault();
             // Admin here
-           var question = questions[0];
-           
-            question.answer = this.element.querySelector("input[name=answer]").value;
-            var result = new Result();
-            result.pushResult(question);
+        //    var question = questions[0];
+        evaluateResults();       
+            
           
            
-        })
-    }   
+        });
+    }
+
+    
    
     
 }
