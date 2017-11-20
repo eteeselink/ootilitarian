@@ -10,10 +10,11 @@
     }
 
     displayQuestions(questions){
-        
-       this.element.innerHTML =` ${questions[0].question}`;
-    }
-    
+        for (var i = 0; i < questions.length; i++) { 
+            this.element.innerHTML += `<br/>${questions[i].question} <br/>
+                                      ${questions[i].answer}`;
+        }        
+    }   
    
     
 }
