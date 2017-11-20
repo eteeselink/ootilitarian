@@ -15,7 +15,11 @@ export class Admin {
             <input type="text" name="question" id="question">
             <br>
             <label for="answer">Answer: </label><br>
-            <input type="text" name="answer" id="answer">
+            <input type="radio" name="answer" value="yes" id="yes">
+            <label for="yes">Yes</label><br>
+
+            <input type="radio" name="answer" value="no" id="no">
+            <label for="no">No</label><br>
             <br>
             <button id="btn">Submit!</button>
         `;
@@ -28,7 +32,7 @@ export class Admin {
             ev.preventDefault();
 
             var question =  this.element.querySelector("input[name=question]").value;
-            var answer = this.element.querySelector("input[name=answer]").value;
+            var answer = this.element.querySelector("input[name=answer]:checked").value;
             const aQuestion = new Question(question, answer);
             this.element.innerHTML = `<p>Question ${aQuestion.question}, Answer ${aQuestion.answer}</p>`;
             
