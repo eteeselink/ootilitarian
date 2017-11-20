@@ -14,6 +14,14 @@ export class Admin {
             <p>Welcome Admin, please fill in your (yes/no) question.</p>
             <label for="question">Question: </label><br>
             <input type="text" name="question" id="question">
+            <label for="type">Question type: </label>
+            <select>
+            <option value="text">Text</option>
+            <option value="multi">Multiple choices</option>
+            <option value="score">Score</option>
+          
+          </select>
+
             <br>
             <button id="btn">Submit!</button>
         `;
