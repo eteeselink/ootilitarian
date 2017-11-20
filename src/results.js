@@ -10,6 +10,12 @@ export class Result {
       this.questions.push(question);
   }
 
+  pushResults(questions) {
+      for(var question in questions) {
+          pushResult(question);
+      }
+  }
+
   retrieveResults(element) {
     var results = {};
     for(let qa of this.questions) {
