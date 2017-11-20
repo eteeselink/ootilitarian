@@ -32,7 +32,7 @@ import { Result } from "./results.js";
            
             question.answer = this.element.querySelector("input[name=answer]").value;
             var result = new Result();
-            result.pushResults(questions);
+            result.pushResult(question);
             result.retrieveResults(this.element);
            
         })
