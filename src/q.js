@@ -4,18 +4,18 @@ import {Question} from "./question.js";
         {
                 this.element=element;
         }
-        displayQuestions(question){
+            displayQuestions(question){
+                
+                this.element.innerHTML = `
+                <label for="question">Question: </label><br>
+                <input type="text" name="question" id="question" value="${question.question}">
+                <br>
             
-            this.element.innerHTML = `
-            <label for="question">Question: </label><br>
-            <input type="text" name="question" id="question" value="${question.question}">
-            <br>
-           
-            <label for="answer">Answer: </label><br>
-             <input type="text" name="answer">
-           
-        `;   
-        }  
+                <label for="answer">Answer: </label><br>
+                <input type="text" name="answer">
+            
+            `;   
+            }  
         render(name) {
           
         this.element.querySelector("button").addEventListener("click", ev => {
