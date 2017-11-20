@@ -11,21 +11,13 @@ export class Result {
   }
 
   retrieveResults(element) {
-  //export function retrieveResults(element, questionaire, answer) {
+      var count = 0;
+      for (var i = 0; i < this.questions.length; ++i) {
+          if (this.questions[i].answer.toLowerCase() == 'yes') {
+              count++;
+          }
+      }
 
-
-      var text = '';
-
-      text += this.questions[0].question;
-      text += '\n';
-      text += this.questions[0].answer;
-
-      // for(let i = 0; i < questionarie.length(); i++) {
-      //     var question = questionaire.at(i);
-      //     //element.innerHTML = `<pre>${text}</pre>`;
-      // }
-
-      element.innerHTML = `<pre>${text}</pre>`;
+      element.innerHTML = `<pre>Yes: ${count}<br/>No: ${this.questions.length - count}</pre>`
   }
-
 }
