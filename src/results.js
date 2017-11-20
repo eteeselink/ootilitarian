@@ -12,7 +12,7 @@ export class Result {
 
   pushResults(questions) {
       for(var question in questions) {
-          pushResult(question);
+          this.pushResult(question);
       }
   }
 
@@ -32,6 +32,7 @@ export class Result {
     }
     console.log(results);
 
+    element.innerHTML = "";
     for (var question in results) {
         element.innerHTML += `<p><b>Question:</b> ${question}</p>`;
         element.innerHTML += `<p>`;
